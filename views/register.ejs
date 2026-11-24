@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+
+<section class="panel narrow">
+    <h1>Registration</h1>
+    <p class="lede">Create a registered visitor account to read Contact messages.</p>
+    <form method="POST" action="/register" class="stack-form">
+        <label>
+            Username
+            <input name="username" required minlength="3" autocomplete="username">
+        </label>
+        <label>
+            Password
+            <input type="password" name="password" required minlength="4" autocomplete="new-password">
+        </label>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+</section>
+
+<%- include("partials/footer") %>

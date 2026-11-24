@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+
+<section class="panel narrow">
+    <h1>Login</h1>
+    <p class="lede">Registered visitors can open Messages. Admins can also open CRUD.</p>
+    <form method="POST" action="/login" class="stack-form">
+        <label>
+            Username
+            <input name="username" required autocomplete="username">
+        </label>
+        <label>
+            Password
+            <input type="password" name="password" required autocomplete="current-password">
+        </label>
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <p class="hint">Demo accounts after seeding: <code>admin / admin123</code>, <code>demo / user123</code></p>
+</section>
+
+<%- include("partials/footer") %>
