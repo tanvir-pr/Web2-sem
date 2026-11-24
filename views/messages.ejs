@@ -1,0 +1,25 @@
+<%- include("partials/header") %>
+
+<section class="panel">
+    <h1>Messages</h1>
+    <p class="lede">Contact form submissions, newest first. Visible to logged-in users only.</p>
+
+    <% if (!messages.length) { %>
+        <p>No messages yet.</p>
+    <% } %>
+
+    <div class="message-list">
+        <% messages.forEach(function(m) { %>
+            <article class="message-card">
+                <header>
+                    <h2><%= m.subject %></h2>
+                    <time><%= new Date(m.createdAt).toLocaleString() %></time>
+                </header>
+                <p class="meta"><strong><%= m.name %></strong> · <%= m.email %></p>
+                <p><%= m.body %></p>
+            </article>
+        <% }) %>
+    </div>
+</section>
+
+<%- include("partials/footer") %>
