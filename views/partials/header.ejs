@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== "undefined" ? title + " | " : "" %>EcoHaul Waste Transport</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="brand">
+                <a href="/">EcoHaul</a>
+                <span>Waste Transport Portal</span>
+            </div>
+            <button class="nav-toggle" type="button" aria-label="Toggle menu" onclick="document.body.classList.toggle('nav-open')">☰</button>
+            <nav class="site-nav">
+                <%# Guest: Mainpage, Database, Contact, Login, Registration — Graph has no role rule in the task %>
+                <a href="/">Mainpage</a>
+                <a href="/database">Database</a>
+                <a href="/contact">Contact</a>
+                <a href="/graph">Graph</a>
+                <% if (user) { %>
+                    <a href="/messages">Messages</a>
+                <% } %>
+                <% if (user && user.role === "admin") { %>
+                    <a href="/crud">CRUD</a>
+                <% } %>
+                <% if (!user) { %>
+                    <a href="/login">Login</a>
+                    <a href="/register">Registration</a>
+                <% } else { %>
+                    <span class="nav-user"><%= user.username %></span>
+                    <a href="/logout">Logout</a>
+                <% } %>
+            </nav>
+        </header>
+
+        <% if (message) { %>
+            <div class="flash"><%= message %></div>
+        <% } %>
+
+        <main class="site-main">
