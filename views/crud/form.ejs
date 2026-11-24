@@ -1,0 +1,26 @@
+<%- include("../partials/header") %>
+
+<section class="panel narrow">
+    <h1><%= title %></h1>
+    <form method="POST" action="<%= action %>" class="stack-form">
+        <% if (mode === "edit") { %>
+            <p class="hint">Service ID: <strong><%= service.id %></strong></p>
+        <% } else { %>
+            <p class="hint">A new numeric ID will be assigned automatically.</p>
+        <% } %>
+        <label>
+            Waste type abbreviation (wtype)
+            <input name="wtype" value="<%= formData.wtype || service.wtype || '' %>" required maxlength="20">
+        </label>
+        <label>
+            Description
+            <textarea name="description" rows="4" required maxlength="300"><%= formData.description || service.description || '' %></textarea>
+        </label>
+        <div class="hero-actions">
+            <button class="btn btn-primary" type="submit"><%= mode === "edit" ? "Save changes" : "Create" %></button>
+            <a class="btn btn-ghost" href="/crud">Cancel</a>
+        </div>
+    </form>
+</section>
+
+<%- include("../partials/footer") %>

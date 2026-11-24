@@ -1,0 +1,36 @@
+<%- include("../partials/header") %>
+
+<section class="panel">
+    <div class="panel-head">
+        <div>
+            <h1>CRUD — Services</h1>
+            <p class="lede">Admin-only maintenance for the <code>services</code> collection.</p>
+        </div>
+        <a class="btn btn-primary" href="/crud/new">Add service</a>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr><th>ID</th><th>Type</th><th>Description</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                <% services.forEach(function(s) { %>
+                    <tr>
+                        <td><%= s.id %></td>
+                        <td><%= s.wtype %></td>
+                        <td><%= s.description %></td>
+                        <td class="actions">
+                            <a class="btn btn-small" href="/crud/<%= s._id %>/edit">Edit</a>
+                            <form method="POST" action="/crud/<%= s._id %>/delete" class="inline-form" onsubmit="return confirm('Delete this service?');">
+                                <button class="btn btn-small btn-danger" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<%- include("../partials/footer") %>
