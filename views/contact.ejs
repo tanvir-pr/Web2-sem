@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+
+<section class="panel narrow">
+    <h1>Contact</h1>
+    <p class="lede">Send a message to the site owner. Fields are validated on the server and stored in MongoDB.</p>
+
+    <form method="POST" action="/contact" class="stack-form" novalidate>
+        <label>
+            Name
+            <input name="name" value="<%= formData.name || '' %>" required>
+            <% if (errors.name) { %><span class="field-error"><%= errors.name %></span><% } %>
+        </label>
+        <label>
+            Email
+            <input type="email" name="email" value="<%= formData.email || '' %>" required>
+            <% if (errors.email) { %><span class="field-error"><%= errors.email %></span><% } %>
+        </label>
+        <label>
+            Subject
+            <input name="subject" value="<%= formData.subject || '' %>" required>
+            <% if (errors.subject) { %><span class="field-error"><%= errors.subject %></span><% } %>
+        </label>
+        <label>
+            Message
+            <textarea name="body" rows="6" required><%= formData.body || '' %></textarea>
+            <% if (errors.body) { %><span class="field-error"><%= errors.body %></span><% } %>
+        </label>
+        <button class="btn btn-primary" type="submit">Send message</button>
+    </form>
+</section>
+
+<%- include("partials/footer") %>
