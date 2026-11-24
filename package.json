@@ -1,0 +1,28 @@
+{
+  "name": "web-lab-waste-transport",
+  "version": "1.0.0",
+  "description": "Web Programming II Seminar Homework - Waste Transport (Node.js, Express, Mongoose, EJS)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "seed": "node seed.js",
+    "dev": "node app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "authors": [
+    "Tanvir Hasan (C0FMUG)",
+    "Islam Md Tariqul (WEP2KE)"
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.6.0"
+  }
+}

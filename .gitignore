@@ -1,0 +1,26 @@
+# dependencies & secrets
+node_modules/
+.env
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Office / Word lock files
+~$*
+
+# PDFs and Word docs — do not push
+*.pdf
+*.docx
+*.doc
+
+# Seminar / homework extra folders (if ever copied into this repo)
+Solutions/
+Solutions (1)/
+Databases for Homeworks/
+Databases for Homeworks (2)/
+Web programming-2-Seminar-Homework-NodeJS/
+Web-programming-2-Seminar*
+agent-transcripts/
+
+.atlas_pw.tmp
